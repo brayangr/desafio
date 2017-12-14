@@ -14,8 +14,7 @@ module Desafio
     #Carga variables de entorno
     config.before_configuration do
       env_file = Rails.root.join("config", 'local_env.yml').to_s
-  
-      p env_file
+      
       if File.exists?(env_file)
         YAML.load_file(env_file)[Rails.env].each do |key, value|
           ENV[key.to_s] = value
