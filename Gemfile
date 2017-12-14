@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.4.1'
 #Gema para mejorar un poco la interfaz de usuario
 gem 'material_design_lite-rails', '~> 1.3'
 #Gema de iconos material design
