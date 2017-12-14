@@ -8,11 +8,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td class="mdl-data-table__cell--non-numeric">Santiago (CL)</td>
-				<td>11:35</td>
-				<td>30</td>
-			</tr>
+			<% @temperatures.each do |temperature| %>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric"><%= temperature.name%></td>
+					<td><%= temperature.hour%></td>
+					<td><%= temperature.temperature%></td>
+				</tr>
+			<% end %>
 		</tbody>
 	</table>
 </div>

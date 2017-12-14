@@ -1,0 +1,2 @@
+class CitiesTemperature < ApplicationRecord
+end
