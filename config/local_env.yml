@@ -1,4 +1,4 @@
 development:
   API_URL: 'http://localhost:3000/'
 production:
-  API_URL: 'https://fast-mountain-55246.herokuapp.com/'
+  API_URL: 'https://rocky-brook-52658.herokuapp.com/'
