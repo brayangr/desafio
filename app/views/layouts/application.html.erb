@@ -27,7 +27,8 @@
           <span class="mdl-layout__title">Desafio Acid Labs</span>
           <div class="mdl-layout-spacer"></div>
           <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="#">Administrador</a>
+            <%=link_to 'Inicio', root_path, class: "mdl-navigation__link"%>
+            <%=link_to 'Historial de consultas', cities_temperatures_path, class: "mdl-navigation__link"%>
           </nav>
         </div>
       </header>

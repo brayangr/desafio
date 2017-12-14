@@ -39,6 +39,9 @@ class BienvenidaController < ApplicationController
 			
 		rescue BienvenidaController::ApiRequestFailed
 			retry
+		rescue Errno::ECONNREFUSED
+			#Si cae en este error es posible que la api no este funcionando, o que la url indicada para
+			#esta sea incorrecta
 		end
   end
 end
