@@ -14,4 +14,4 @@ Segunda parte del desafio acid labs
 ### Heroku
 * Instalar heroku, e iniciar sesion.
 * Setear la  url de la api en el archivo /config/local_env.yml, se debe setear para todos los entornos. Ejemplo: "https://fast-mountain-55246.herokuapp.com/", no olvidar agregar el slash final y ademas en este caso la url debe ser accesible desde internet
-* ejecutar deploy_heroku.sh
+* Dar permisos de ejecucion a deploy_heroku.sh y luego ejecutarlo.
