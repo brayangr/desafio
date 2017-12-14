@@ -7,6 +7,7 @@ class BienvenidaController < ApplicationController
 		require 'json'
 		
 		@temperatures = Array.new
+		save = false 
 
 		#Se define la url del endpoint a consumir
 		url = ENV['API_URL'] + "api/cities"
@@ -17,20 +18,25 @@ class BienvenidaController < ApplicationController
 
 			response = Net::HTTP.get(uri)
 			response = JSON.parse(response)
-			p response
+
 			#Para cumplir el requisito de solo almacenar a la base de datos pasado de 10 segundos
 			#desde la ultima insercion, se define una cookie guardando la hora en que se realizo.
 			if cookies[:last_update].nil?
 				cookies[:last_update] = Time.now
+				save = true
 			end
 			if cookies[:last_update] < Time.now-10
 				cookies[:last_update] = Time.now
+				save = true
 			end
 
 			response.each do |r|
 				@temperatures.append(CitiesTemperature.new(r))
+				if save
+					@temperatures.last.save
+				end
 			end
-			p @temperatures
+			
 		rescue BienvenidaController::ApiRequestFailed
 			retry
 		end
