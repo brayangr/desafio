@@ -1,0 +1,22 @@
+<div class="mdl-cell mdl-cell--12">
+	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp style="width:100%;">
+		<thead>
+			<tr>
+				<th class="mdl-data-table__cell--non-numeric">Ciudad</th>
+				<th>Hora<i class="material-icons md-18">schedule</i></th>
+				<th>Temperatura<i class="material-icons md-18">wb_sunny</i></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @temperatures.each do |temperature| %>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric"><%= temperature.name%></td>
+					<td><%= temperature.hour%></td>
+					<td><%= temperature.temperature%></font></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<br>
+	<%= button_to "Actualizar", root_path, :method => :get, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+</div>
