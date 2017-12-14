@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
-      #view-source {
+      view-source {
         position: fixed;
         display: block;
         right: 0;
@@ -31,9 +31,14 @@
           </nav>
         </div>
       </header>
+    
+      <main class="mdl-layout__content">
+        <div class="mdl-grid">
+          <div class="mdl-layout-spacer"></div>
+          <%= yield %>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </main>
     </div>
-    <main class="mdl-layout__content">
-      <div><%= yield %></div>
-    </main>
   </body>
 </html>
